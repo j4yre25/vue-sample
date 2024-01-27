@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.absolute{
+    position: absolute;
+}
+
+.relative{
+    position: relative;
+}
+
+.frame{
+    height: 720px;
+    width: 1280px;
+    background-size: cover;
+    background-image: url(scene-1/background-scene-1.png);
+}
+.frame2{
+    height: 720px;
+    width: 1280px;
+    background-size: cover;
+    background-image: url(scene-2/background-scene-2.png);
+}
+.frame3{
+    height: 720px;
+    width: 1280px;
+    background-size: cover;
+    background-image: url(scene-3/background-scene-3.png);
+}
+
+.object{
+    background-size: cover;
+    animation: appear 1s ease-in-out;
+}
+
+.main-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: calc(649px - (733px / 2));
+    top: calc(252px - (424px / 2));
+    width: 733px;
+    height: 424px;
+    z-index: 1;
+    background-image: url(scene-1/main-area.png);
+}
+
+video {
+    width: 700px;
+    height: 394px;
+}
+
+.parallax-object {
+    position: absolute;
+    left: calc(1159px - (177px / 2));
+    top: calc(217px - (224px / 2));
+    width: 177px;
+    height: 224px;
+    z-index: 9;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(5deg);
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+
+.parallax-object:hover {
+    transform: perspective(800px) rotateY(-30deg);
+}
+
+.parallax-object > * {
+    position: absolute;
+}
+
+.parallax-object .circle {
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    width: 150px;
+    transform: translateZ(50px);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.parallax-object .text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: translateZ(100px);
+}
+
+
+
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.floor{
+    height: 200px;
+    width: 1280px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    left: 0;
+    top: 475px;
+    z-index: 100;
+}
+
+.avatar{
+    height: 94px;
+    width: 48px;
+    position: absolute;
+    z-index: 99;
+}
+
+.clickAnim{
+    transition: all 1s ease-in-out;
+}

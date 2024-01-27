@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Sample</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Vue -->
+    <script src="vendor/vue.global.js"></script>
+    <script src="vendor/vue-router.global.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        <router-view></router-view>
+    </div>
+
+    <!-- Scene 1 -->
+
+    <script type="text/x-template" id="scene1">
+
+        <div class="relative frame">
+            <div class="absolute object" v-for="value in datas" :style="displayAssets(value)"></div>
+            <!-- <div class="main-area">
+                <video src="lessons/scene-1-video.mp4" controls></video>
+            </div> -->
+            <main-area video="lessons/scene-1-video.mp4"/>
+            <div class="parallax-object" style="background-image: url(scene-1/parallax-background-1.jpeg);">
+                <div class="circle"></div>
+                <div class="text">WebTech!</div>
+            </div>
+            <floor title="scene-1"/>
+            <!-- <div class="moving-container">
+                <img src="../01_Module_E/scene-1/avatar.png" alt="" class="avatar">
+            </div> -->
+        </div>
+        
+    </script>
+
+    <script type="text/x-template" id="scene2">
+        
+        <div class="relative frame2">
+            <div class="absolute object" v-for="value in data" :style="displayAssets(value)"></div>
+        </div>
+        <!-- <div class="main-area">
+            <img src="lessons/scene-2-image.png" alt="">
+        </div> -->
+        
+        <main-area image="lessons/scene-2-image.png"/>
+        <div class="parallax-object" style="background-image: url(scene-2/parallax-background-2.jpg);">
+            <div class="circle"></div>
+            <div class="text">HTML</div>
+        </div>
+        <floor title="scene-2"/>
+
+    </script>
+
+    <script type="text/x-template" id="scene3">
+        
+        <div class="relative frame">
+            <div class="absolute object" v-for="value in data" :style="displayAssets(value)"></div>
+            <!-- <div class="main-area">
+                <video src="lessons/scene-3-video.mp4" controls></video>
+            </div> -->
+            <main-area video="lessons/scene-3-video.mp4"/>
+            <div class="parallax-object" style="background-image: url(scene-3/parallax-background-3.jpg);">
+                <div class="circle"></div>
+                <div class="text">HTML</div>
+            </div>
+        </div>
+        <floor title="scene-3"/>
+
+    </script>
+
+
+    <!-- Pages -->
+    <script src="pages/Scene1.js"></script>
+    <script src="pages/Scene2.js"></script>
+    <script src="pages/Scene3.js"></script>
+
+    <!-- Config -->
+    <script src="js/app.js"></script>
+
+    <!-- Components -->
+    <script src="components/Floor.js"></script>
+    <script src="components/MainArea.js"></script>
+
+    <!-- Config -->
+    <script src="js/router.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+
+
+</html>
